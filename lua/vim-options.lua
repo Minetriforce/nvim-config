@@ -10,13 +10,13 @@ vim.o.cursorline = true
 vim.keymap.set(
     'n',
     '<leader>vt',
-    [[<cmd>vsplit | term<cr>A]],
+    [[<cmd>rightbelow vsplit | term<cr>A]],
     { desc = 'Open terminal in vertical split' }
 )
 vim.keymap.set(
     'n',
     '<leader>ht',
-    [[<cmd>split | term<cr>A]],
+    [[<cmd>belowright split | term<cr>A]],
     { desc = 'Open terminal in horizontal split' }
 )
 vim.keymap.set(
