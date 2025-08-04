@@ -6,7 +6,7 @@ return {
         end
     },
     {
-        "williamboman/mason-lspconfig.nvim",
+        "williamboman/mason-lspconfig.nvim", -- NE PAS OUBLIER le setup plus bas!
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = { "lua_ls", "pyright", "marksman", "jdtls" }
