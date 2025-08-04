@@ -25,3 +25,10 @@ vim.keymap.set(
     '<C-\\><C-n>',
     { desc = 'Use jk to enter in terminal normal mode' }
 )
+
+-- Copy from system clipboard
+vim.keymap.set(
+    { 'n', 'x' },
+    '<C-c>', '"+y'
+)
+
