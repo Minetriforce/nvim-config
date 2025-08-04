@@ -14,6 +14,34 @@ return {
         end
     },
     {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        config = function()
+            require("mason-tool-installer").setup({
+                ensure_installed = {
+                    -- LSP servers (déjà gérés par mason-lspconfig mais on peut les remettre)
+                    -- "lua_ls",
+                    -- "pyright", 
+                    -- "marksman",
+                    -- "jdtls",
+                    
+                    -- Formateurs installés automatiquement, cf conform.lua pr les utiliser par fichier
+                    "stylua",      -- Lua formatter
+                    "black",       -- Python formatter
+                    "isort",       -- Python import sorter
+                    "prettier",    -- JS/TS/JSON/YAML/MD formatter
+                    "prettierd",   -- idem mais meilleure perf
+                    "google-java-format", -- Java formatter
+                    
+                    -- Linters (optionnel)
+                    "luacheck",    -- Lua linter
+                    "flake8",      -- Python linter
+                },
+                auto_update = false,
+                run_on_start = true,  -- Installe automatiquement au démarrage
+            })
+        end
+    },
+    {
         "neovim/nvim-lspconfig",
         config = function()
             local lspconfig = require("lspconfig")
@@ -66,7 +94,7 @@ return {
             vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover documentation' })
             vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
-            vim.keymap.set('n', '<C-M-l>', vim.lsp.buf.format, { desc = 'Format code' })
+            -- vim.keymap.set('n', '<C-M-l>', vim.lsp.buf.format, { desc = 'Format code' })
         end
     }
 }
