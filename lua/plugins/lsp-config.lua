@@ -33,7 +33,7 @@ return {
                     "google-java-format", -- Java formatter
                     
                     -- Linters (optionnel)
-                    "luacheck",    -- Lua linter
+                    -- "luacheck",    -- Lua linter
                     "flake8",      -- Python linter
                 },
                 auto_update = false,
@@ -104,15 +104,9 @@ return {
             -- Raccourcis désactivés, utilisé avec l'affichage Telescope
             -- vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
             -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
-<<<<<<< HEAD
-            vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover documentation' })
-            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
-=======
             -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
             -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover documentation' })
             -- vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
->>>>>>> temp
             -- vim.keymap.set('n', '<C-M-l>', vim.lsp.buf.format, { desc = 'Format code' })
         end
     }
