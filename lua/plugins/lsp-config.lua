@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "pyright", "marksman", "jdtls" }
+                ensure_installed = { "lua_ls", "pyright", "marksman", "jdtls", "bashls" }
             })
         end
     },
@@ -24,6 +24,19 @@ return {
 
             -- Configuration pour Markdown
             lspconfig.marksman.setup({})
+
+            -- Configuration pour Bash
+            -- lspconfig.bashls.setup({})
+            lspconfig.bashls.setup({
+                filetypes = { "sh", "bash", "zsh", "bashrc" },
+                single_file_support = true,
+                settings = {
+                    bashIde = {
+                        globPattern = "*@(.sh|.inc|.bash|.command)"
+                    }
+                }
+})
+
 
             -- Configuration pour Java (jdtls)
             lspconfig.jdtls.setup({
@@ -60,13 +73,13 @@ return {
                     bundles = {}
                 },
             })
-
-            vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+            -- Raccourcis désactivés, utilisé avec l'affichage Telescope
+            -- vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
             -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
-            vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover documentation' })
-            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
-            vim.keymap.set('n', '<C-M-l>', vim.lsp.buf.format, { desc = 'Format code' })
+            -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
+            -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover documentation' })
+            -- vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
+            -- vim.keymap.set('n', '<C-M-l>', vim.lsp.buf.format, { desc = 'Format code' })
         end
     }
 }
