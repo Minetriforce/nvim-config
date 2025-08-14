@@ -5,15 +5,16 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
+            c = { "clang-format" },
 			java = { "google-java-format" },
 			html = { "htmlbeautifier" },
-			css = { { "prettierd", "prettier" } },
-			scss = { { "prettierd", "prettier" } },
-			javascript = { { "prettierd", "prettier" } },
-			typescript = { { "prettierd", "prettier" } },
-			json = { { "prettierd", "prettier" } },
-			yaml = { { "prettierd", "prettier" } },
-			markdown = { { "prettierd", "prettier" } },
+			css = {  "prettierd", "prettier", stop_after_first = true },
+			scss = { "prettierd", "prettier", stop_after_first = true },
+			javascript = {  "prettierd", "prettier", stop_after_first = true },
+			typescript = { "prettierd", "prettier", stop_after_first = true },
+			json = { "prettierd", "prettier", stop_after_first = true },
+			yaml = { "prettierd", "prettier", stop_after_first = true },
+			markdown = { "prettierd", "prettier", stop_after_first = true },
 		},
 		-- Format automatique à la sauvegarde (optionnel)
 		-- format_on_save = {

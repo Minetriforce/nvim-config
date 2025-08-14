@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim", -- NE PAS OUBLIER le setup plus bas!
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "pyright", "marksman", "jdtls", "bashls" }
+                ensure_installed = { "lua_ls", "pyright", "marksman", "jdtls", "bashls", "clangd" }
             })
         end
     },
@@ -28,6 +28,7 @@ return {
                     "stylua",      -- Lua formatter
                     "black",       -- Python formatter
                     "isort",       -- Python import sorter
+                    "clang-format",-- C formatter
                     "prettier",    -- JS/TS/JSON/YAML/MD formatter
                     "prettierd",   -- idem mais meilleure perf
                     "google-java-format", -- Java formatter
@@ -53,6 +54,9 @@ return {
             -- Configuration pour Markdown
             lspconfig.marksman.setup({})
 
+            -- Configuration pour Markdown
+            lspconfig.clangd.setup({})
+            
             -- Configuration pour Bash
             -- lspconfig.bashls.setup({})
             lspconfig.bashls.setup({
@@ -63,7 +67,7 @@ return {
                         globPattern = "*@(.sh|.inc|.bash|.command)"
                     }
                 }
-})
+            })
 
 
             -- Configuration pour Java (jdtls)
