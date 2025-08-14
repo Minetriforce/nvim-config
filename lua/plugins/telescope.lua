@@ -20,7 +20,7 @@ return {
     -- vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, { desc = 'Document Symbols (Telescope)' })
     -- vim.keymap.set('n', '<leader>ws', builtin.lsp_workspace_symbols, { desc = 'Workspace Symbols (Telescope)' })
     -- vim.keymap.set('n', '<leader>ca', builtin.lsp_code_actions, { desc = 'Code Actions (Telescope)' })
-    -- vim.keymap.set('n', '<leader>di', builtin.diagnostics, { desc = 'Diagnostics (Telescope)' })
+    vim.keymap.set('n', '<leader>di', builtin.diagnostics, { desc = 'Diagnostics (Telescope)' })
 
     -- Déplacements + Raccourcis
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Keymaps (Telescope)' })
