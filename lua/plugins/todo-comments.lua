@@ -10,6 +10,13 @@ return {
   sign_priority = 8, -- sign priority
   -- keywords recognized as todo comments
   keywords = {
+    -- TODO :
+    -- FIX :
+    -- HACK :
+    -- WARN :
+    -- PERF :
+    -- NOTE :
+    -- TEST :
     FIX = {
       icon = " ", -- icon used for the sign, and in search results
       color = "error", -- can be a hex color, or a named color (see below)
