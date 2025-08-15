@@ -14,8 +14,8 @@ return {
             },
           },
         })
-        vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal left<CR>',{})
+        vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal left<CR>', { silent = true })
         -- vim.keymap.set('n', '<leader>N', ':Neotree filesystem close<CR>',{})
-        vim.keymap.set('n', '<leader>N', ':Neotree filesystem toggle<CR>',{})
+        vim.keymap.set('n', '<leader>N', ':Neotree filesystem toggle<CR>', { silent = true })
     end
 }
