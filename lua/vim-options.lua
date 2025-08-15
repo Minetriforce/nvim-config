@@ -32,3 +32,17 @@ vim.keymap.set(
     '<C-c>', '"+y'
 )
 
+-- Enleve le surlignage de la recherche
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { silent = true })
+
+-- vim.keymap.set(
+--     'n',
+--     '<leader>dt', 
+--     function()
+--         if vim.diagnostic.is_enabled() then
+--             vim.diagnostic.disable()
+--         else
+--             vim.diagnostic.enable()
+--         end
+--     end,
+    -- { desc = 'Toogle diagnostics' })
