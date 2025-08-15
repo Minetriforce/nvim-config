@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim", -- NE PAS OUBLIER le setup plus bas!
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "pyright", "marksman", "jdtls", "bashls", "clangd" }
+                ensure_installed = { "lua_ls", "pyright", "marksman", "bashls", "clangd" }
             })
         end
     },
@@ -22,7 +22,7 @@ return {
                     -- "lua_ls",
                     -- "pyright", 
                     -- "marksman",
-                    -- "jdtls",
+                    "jdtls",
                     
                     -- Formateurs installés automatiquement, cf conform.lua pr les utiliser par fichier
                     "stylua",      -- Lua formatter
@@ -46,16 +46,16 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({})
+            -- lspconfig.lua_ls.setup({})
 
             -- Configuration pour Python
-            lspconfig.pyright.setup({})
+            -- lspconfig.pyright.setup({})
 
             -- Configuration pour Markdown
-            lspconfig.marksman.setup({})
+            -- lspconfig.marksman.setup({})
 
             -- Configuration pour Markdown
-            lspconfig.clangd.setup({})
+            -- lspconfig.clangd.setup({})
             
             -- Configuration pour Bash
             -- lspconfig.bashls.setup({})
@@ -106,7 +106,7 @@ return {
                 },
             })
             -- Raccourcis désactivés, utilisé avec l'affichage Telescope
-            -- vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+            vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
             -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
             -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
             -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover documentation' })
