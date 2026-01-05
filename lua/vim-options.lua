@@ -7,6 +7,11 @@ vim.wo.number = true
 vim.o.cursorline = true
 -- vim.o.clipboard = "unnamedplus"
 
+-- Affiche les diagnostics sur la ligne
+vim.diagnostic.config({
+    virtual_text = true,
+})
+
 vim.keymap.set(
     'n',
     '<leader>vt',
@@ -34,6 +39,9 @@ vim.keymap.set(
 
 -- Enleve le surlignage de la recherche
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { silent = true })
+
+-- Permet de suppr le mot où on est en mode normal avec Ctrl + suppr
+vim.keymap.set("i", "<C-BS>", "<C-o>diw", { desc = "Delete inner word" })
 
 -- vim.keymap.set(
 --     'n',

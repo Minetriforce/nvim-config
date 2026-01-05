@@ -6,7 +6,7 @@ return {
         end
     },
     {
-        "williamboman/mason-lspconfig.nvim", -- NE PAS OUBLIER le setup plus bas!
+        "williamboman/mason-lspconfig.nvim", -- setup des lsp qui n'ont pas de config
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = { "lua_ls", "pyright", "marksman", "bashls", "clangd" }
@@ -14,11 +14,11 @@ return {
         end
     },
     {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim", 
         config = function()
             require("mason-tool-installer").setup({
                 ensure_installed = {
-                    -- LSP servers (déjà gérés par mason-lspconfig mais on peut les remettre)
+                    -- LSP servers qui ont besoin de config 
                     -- "lua_ls",
                     -- "pyright", 
                     -- "marksman",
