@@ -22,7 +22,7 @@ return {
                     -- "lua_ls",
                     -- "pyright", 
                     -- "marksman",
-                    "jdtls",
+                    -- "jdtls",
                     
                     -- Formateurs installés automatiquement, cf conform.lua pr les utiliser par fichier
                     "stylua",      -- Lua formatter
